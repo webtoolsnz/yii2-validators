@@ -14,6 +14,7 @@ build:
     tests:
         before:
             - codecept build
+            - codecept run || true
         override:
             -
                 command: 'codecept run --coverage --coverage-xml --coverage-html'
