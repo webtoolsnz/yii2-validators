@@ -13,10 +13,10 @@ build:
               - composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*"
     tests:
         before:
-            - codecept build -c tests/codeception.yml
+            - codecept build -c
         override:
             -
-                command: 'codecept run -c tests/codeception.yml --coverage --coverage-xml --coverage-html'
+                command: 'codecept run -c --coverage --coverage-xml --coverage-html'
                 coverage:
                     file: 'tests/codeception/_output/coverage.xml'
                     format: 'php-clover'
