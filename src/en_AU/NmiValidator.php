@@ -11,6 +11,11 @@ use yii\validators\Validator;
 class NmiValidator extends Validator
 {
     /**
+     * @var string
+     */
+    public $pattern = '/^[0-9a-z]{11}$/i';
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -29,18 +34,22 @@ class NmiValidator extends Validator
      */
     protected function validateValue($value)
     {
-        $chars = array_reverse(str_split((string) $value));
-        $checksum = (int) array_shift($chars);
-        $total = 0;
+        if ($valid = ((bool) preg_match($this->pattern, $value))) {
+            $chars = array_reverse(str_split((string)$value));
+            $checksum = (int)array_shift($chars);
+            $total = 0;
 
-        foreach ($chars as $i => $char) {
-            $ascii = str_split(($i % 2 === 0)  ? (ord($char) * 2) : ord($char));
-            $total += array_sum($ascii);
+            foreach ($chars as $i => $char) {
+                $ascii = str_split(($i % 2 === 0) ? (ord($char) * 2) : ord($char));
+                $total += array_sum($ascii);
+            }
+
+            $calc = (int)((floor($total / 10) + 1) * 10) - $total;
+            $calc = ($calc == 10 ? 0 : $calc);
+
+            $valid = $calc === $checksum;
         }
 
-        $calc = (int) ((floor($total / 10) + 1) * 10) - $total;
-        $calc = ($calc == 10 ? 0 : $calc);
-
-        return $calc === $checksum ? null : [$this->message, []];
+        return $valid ? null : [$this->message, []];
     }
 }
