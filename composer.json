@@ -1,0 +1,31 @@
+{
+  "name": "webtoolsnz/yii2-validators",
+  "description": "A collection of yii2 validators.",
+  "keywords": ["yii2", "validators"],
+  "type": "yii2-extension",
+  "license": "proprietary",
+  "homepage": "https://github.com/webtoolsnz/yii2-validators",
+  "authors": [
+    {
+      "name": "Webtools Ltd",
+      "email": "support@webtools.co.nz",
+      "homepage": "http://www.webtools.co.nz",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-codeception": "~2.0",
+    "codeception/codeception": "2.0.*",
+    "codeception/specify": "*",
+    "codeception/verify": "*",
+    "codeception/aspect-mock": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "webtoolsnz\\validators\\": "src"
+    }
+  }
+}

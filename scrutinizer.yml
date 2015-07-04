@@ -1,0 +1,41 @@
+#
+# Build Config
+#
+build:
+    environment:
+        php: '5.4.28'
+    cache:
+        directories:
+            - '~/.composer/'
+    dependencies:
+            before:
+              - composer global require "fxp/composer-asset-plugin:~1.0"
+              - composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*"
+    tests:
+        before:
+            - codecept build -c tests/codeception.yml
+        override:
+            -
+                command: 'codecept run -c tests/codeception.yml --coverage --coverage-xml --coverage-html'
+                coverage:
+                    file: 'tests/codeception/_output/coverage.xml'
+                    format: 'php-clover'
+#
+# Analysis Config
+##
+filter:
+    excluded_paths: [tests/*]
+tools:
+    php_analyzer: true
+    php_code_coverage: true
+    php_code_sniffer:
+        config:
+            standard: PSR2
+        filter:
+            paths: ['src']
+    php_loc:
+        enabled: true
+        excluded_dirs: [vendor, tests]
+    php_cpd:
+        enabled: true
+        excluded_dirs: [vendor, tests]
