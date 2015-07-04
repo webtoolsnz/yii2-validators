@@ -1,5 +1,5 @@
 <?php
-namespace webtoolsnz\validators\en_AU\AbnValidator;
+namespace webtoolsnz\validators\en_AU;
 
 use Yii;
 use yii\validators\Validator;
