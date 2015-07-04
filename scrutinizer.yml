@@ -19,7 +19,7 @@ build:
             -
                 command: 'codecept run --coverage --coverage-xml --coverage-html'
                 coverage:
-                    file: 'tests/codeception/_output/coverage.xml'
+                    file: 'tests/_output/coverage.xml'
                     format: 'php-clover'
 #
 # Analysis Config
