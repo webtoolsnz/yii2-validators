@@ -19,7 +19,7 @@ class NmiValidatorTest extends TestCase
     public function testValidator($nmi, $expected)
     {
         $validator = new NmiValidator();
-        $this->assertEquals($expected, $validator->validate($nmi, $error));
+        $this->assertEquals($expected, $validator->validate($nmi));
     }
 
     /**
