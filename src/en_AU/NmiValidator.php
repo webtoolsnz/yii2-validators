@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * Class NmiValidator
- * @package app\validators
+ * @package webtoolsnz\validators\en_AU
  */
 class NmiValidator extends Validator
 {

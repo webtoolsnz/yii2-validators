@@ -6,7 +6,7 @@ use yii\validators\Validator;
 
 /**
  * Class AbnValidator
- * @package app\validators
+ * @package webtoolsnz\validators\en_AU
  */
 class AbnValidator extends Validator
 {
