@@ -3,13 +3,12 @@
 namespace webtoolsnz\validator\tests;
 
 use webtoolsnz\validators\en_AU\NmiValidator;
-use yii\codeception\TestCase;
 
 /**
  * Class NmiValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class NmiValidatorTest extends TestCase
+class NmiValidatorTest extends \PHPUnit_Framework_TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 

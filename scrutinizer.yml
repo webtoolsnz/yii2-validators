@@ -10,17 +10,7 @@ build:
     dependencies:
             before:
               - composer global require "fxp/composer-asset-plugin:~1.0"
-              - composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*"
-    tests:
-        before:
-            - codecept build
-            - codecept run || true
-        override:
-            -
-                command: 'codecept run --coverage --coverage-xml --coverage-html'
-                coverage:
-                    file: 'tests/_output/coverage.xml'
-                    format: 'php-clover'
+
 #
 # Analysis Config
 ##

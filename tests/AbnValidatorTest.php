@@ -1,15 +1,13 @@
 <?php
-
 namespace webtoolsnz\validator\tests;
 
 use webtoolsnz\validators\en_AU\AbnValidator;
-use yii\codeception\TestCase;
 
 /**
  * Class AbnValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class AbnValidatorTest extends TestCase
+class AbnValidatorTest extends \PHPUnit_Framework_TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 
