@@ -22,8 +22,8 @@ class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
             'minimum_digit' => 0,
             'minimum_special' => 0,
             ]);
-        $this->assertEquals(true, $validator->validate('ab'));
-        $this->assertEquals(false, $validator->validate('a'));
+        $this->assertTrue($validator->validate('ab'));
+        $this->assertFalse($validator->validate('a'));
     }
     public function testLower()
     {
@@ -34,8 +34,8 @@ class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
             'minimum_digit' => 0,
             'minimum_special' => 0,
             ]);
-        $this->assertEquals(true, $validator->validate('ab'));
-        $this->assertEquals(false, $validator->validate('a'));
+        $this->assertTrue($validator->validate('ab'));
+        $this->assertFalse($validator->validate('a'));
     }
     public function testUpper()
     {
@@ -46,8 +46,8 @@ class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
             'minimum_digit' => 0,
             'minimum_special' => 0,
             ]);
-        $this->assertEquals(true, $validator->validate('ABC'));
-        $this->assertEquals(false, $validator->validate('A'));
+        $this->assertTrue($validator->validate('ABC'));
+        $this->assertFalse($validator->validate('A'));
     }
     public function testDigit()
     {
@@ -58,8 +58,8 @@ class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
             'minimum_digit' => 2,
             'minimum_special' => 0,
             ]);
-        $this->assertEquals(true, $validator->validate('12'));
-        $this->assertEquals(false, $validator->validate('a'));
+        $this->assertTrue($validator->validate('12'));
+        $this->assertFalse($validator->validate('a'));
     }
     public function testSpecial()
     {
@@ -70,16 +70,16 @@ class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
             'minimum_digit' => 0,
             'minimum_special' => 6,
             ]);
-        $this->assertEquals(true, $validator->validate('*(&@#^%'));
-        $this->assertEquals(false, $validator->validate('a'));
+        $this->assertTrue($validator->validate('*(&@#^%'));
+        $this->assertFalse($validator->validate('a'));
     }
     public function testDefaultRules()
     {
         $validator = new PasswordStrengthValidator();
-        $this->assertEquals(true, $validator->validate('MySecureP4ssW@rd'));
-        $this->assertEquals(false, $validator->validate('abcd'));
-        $this->assertEquals(false, $validator->validate('password1'));
-        $this->assertEquals(false, $validator->validate('Password1'));
+        $this->assertTrue($validator->validate('MySecureP4ssW@rd'));
+        $this->assertFalse($validator->validate('abcd'));
+        $this->assertFalse($validator->validate('password1'));
+        $this->assertFalse($validator->validate('Password1'));
     }
 }
 

@@ -47,7 +47,7 @@ class PasswordStrengthValidator extends Validator
                 }
             }
         }
-        return true;
+        return null;
     }
     private function getRules() {
         return[
