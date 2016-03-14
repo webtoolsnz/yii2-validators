@@ -9,7 +9,7 @@ use Yii;
 use yii\validators\Validator;
 
 /**
- * Class PasswordStrengthValidator
+ * Class PhoneNumberValidator
  * @package webtoolsnz\validators
  */
 class PhoneNumberValidator extends Validator
