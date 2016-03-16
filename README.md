@@ -84,7 +84,7 @@ $rules = [
 
 ## Testing
 
-`webtoolsnz/` has a [PHPUnit](https://phpunit.de) test suite. To run the tests, run the following command from the project folder.
+`webtoolsnz/yii2-validators` has a [PHPUnit](https://phpunit.de) test suite. To run the tests, run the following command from the project folder.
 
 ``` bash
 $ composer test
