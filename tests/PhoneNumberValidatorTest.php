@@ -25,7 +25,7 @@ class PhoneNumberValidatorTest extends \PHPUnit_Framework_TestCase
         $validator = new PhoneNumberValidator([
             'expectedRegion' => 'NZ'
             ]);
-        $this->assertTrue($validator->validate('021 304 471'));
+        $this->assertTrue($validator->validate('021 700 700'));
         $this->assertTrue($validator->validate('+64 21 700 700'));
     }
     public function testRegionRequired()
