@@ -107,6 +107,13 @@ class PhoneNumberValidatorTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertEquals('+6449780738', $model->phone);
     }
+    public function testNewMobileFormat(){
+        $validator = new PhoneNumberValidator([
+            'requiredRegion' => 'AU',
+        ]);
+        // 0480120611 is using new Mobile format in AU, which was invalid in giggsey v7.0.0
+        $this->assertTrue($validator->validate('0480120611'));
+    }
 }
 
 
