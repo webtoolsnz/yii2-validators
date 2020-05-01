@@ -7,7 +7,7 @@ use webtoolsnz\validators\en_AU\AbnValidator;
  * Class AbnValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class AbnValidatorTest extends \PHPUnit_Framework_TestCase
+class AbnValidatorTest extends \PHPUnit\Framework\TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 

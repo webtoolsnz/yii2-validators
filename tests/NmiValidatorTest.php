@@ -8,7 +8,7 @@ use webtoolsnz\validators\en_AU\NmiValidator;
  * Class NmiValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class NmiValidatorTest extends \PHPUnit_Framework_TestCase
+class NmiValidatorTest extends \PHPUnit\Framework\TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 

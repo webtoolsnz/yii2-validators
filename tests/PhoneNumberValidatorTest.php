@@ -10,7 +10,7 @@ use yii\codeception\TestCase;
  * Class PhoneNumberValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class PhoneNumberValidatorTest extends \PHPUnit_Framework_TestCase
+class PhoneNumberValidatorTest extends \PHPUnit\Framework\TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 

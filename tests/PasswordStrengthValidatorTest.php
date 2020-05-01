@@ -9,7 +9,7 @@ use yii\codeception\TestCase;
  * Class UkPostCodeValidatorTest
  * @package webtoolsnz\validator\tests
  */
-class PasswordStrengthValidatorTest extends \PHPUnit_Framework_TestCase
+class PasswordStrengthValidatorTest extends \PHPUnit\Framework\TestCase
 {
     public $appConfig = '@tests/config/unit.php';
 
